@@ -33,7 +33,7 @@ module Yoti
           end
 
           # check if the key matches the format age_[over|under]:[1-999]
-          if /age_(over|under):[1-9][0-9]?[0-9]?/.match?(field.name)
+          if !!(field.name =~ /age_(over|under):[1-9][0-9]?[0-9]?/i)
             @age_verified = field.value == 'true'
           end
         end
